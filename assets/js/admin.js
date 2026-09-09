@@ -1,0 +1,2 @@
+function exportBookings(){const rows=JSON.parse(localStorage.getItem('petHavenBookings')||'[]');const blob=new Blob([JSON.stringify(rows,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='pet-haven-bookings.json';a.click();URL.revokeObjectURL(a.href)}
+function clearBookings(){if(confirm('Clear all demo bookings from this browser?')){localStorage.removeItem('petHavenBookings');location.reload()}}
